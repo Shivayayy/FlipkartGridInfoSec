@@ -1,0 +1,117 @@
+{
+  "https://onlineshop-psi-seven.vercel.app/api/cart/fetchcart": {
+    "alerts": [
+      {
+        "sourceid": "3",
+        "method": "GET",
+        "evidence": "",
+        "pluginId": "10038",
+        "cweid": "693",
+        "confidence": "High",
+        "wascid": "15",
+        "description": "Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.",
+        "messageId": "6",
+        "inputVector": "",
+        "url": "https://onlineshop-psi-seven.vercel.app/api/cart/fetchcart",
+        "tags": {
+          "OWASP_2021_A05": "https://owasp.org/Top10/A05_2021-Security_Misconfiguration/",
+          "CWE-693": "https://cwe.mitre.org/data/definitions/693.html",
+          "OWASP_2017_A06": "https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration.html"
+        },
+        "reference": "https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy\nhttps://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html\nhttps://www.w3.org/TR/CSP/\nhttps://w3c.github.io/webappsec-csp/\nhttps://web.dev/articles/csp\nhttps://caniuse.com/#feat=contentsecuritypolicy\nhttps://content-security-policy.com/",
+        "solution": "Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.",
+        "alert": "Content Security Policy (CSP) Header Not Set",
+        "param": "",
+        "attack": "",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "risk": "Medium",
+        "risk_score": 3,
+        "id": "0",
+        "alertRef": "10038-1"
+      },
+      {
+        "sourceid": "3",
+        "method": "GET",
+        "evidence": "Access-Control-Allow-Origin: *",
+        "pluginId": "10098",
+        "cweid": "264",
+        "confidence": "Medium",
+        "wascid": "14",
+        "description": "Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server",
+        "messageId": "6",
+        "inputVector": "",
+        "url": "https://onlineshop-psi-seven.vercel.app/api/cart/fetchcart",
+        "tags": {
+          "OWASP_2021_A01": "https://owasp.org/Top10/A01_2021-Broken_Access_Control/",
+          "OWASP_2017_A05": "https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control.html",
+          "CWE-264": "https://cwe.mitre.org/data/definitions/264.html"
+        },
+        "reference": "https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy",
+        "solution": "Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).\nConfigure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.",
+        "alert": "Cross-Domain Misconfiguration",
+        "param": "",
+        "attack": "",
+        "name": "Cross-Domain Misconfiguration",
+        "risk": "Medium",
+        "risk_score": 3,
+        "id": "3",
+        "alertRef": "10098"
+      },
+      {
+        "sourceid": "3",
+        "method": "GET",
+        "evidence": "Age: 0",
+        "pluginId": "10050",
+        "cweid": "-1",
+        "confidence": "Medium",
+        "wascid": "-1",
+        "description": "The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance. ",
+        "messageId": "6",
+        "inputVector": "",
+        "url": "https://onlineshop-psi-seven.vercel.app/api/cart/fetchcart",
+        "tags": {
+          "WSTG-v42-ATHN-06": "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses"
+        },
+        "reference": "https://tools.ietf.org/html/rfc7234\nhttps://tools.ietf.org/html/rfc7231\nhttps://www.rfc-editor.org/rfc/rfc9110.html",
+        "solution": "Validate that the response does not contain sensitive, personal or user-specific information.  If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:\nCache-Control: no-cache, no-store, must-revalidate, private\nPragma: no-cache\nExpires: 0\nThis configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.",
+        "alert": "Retrieved from Cache",
+        "param": "",
+        "attack": "",
+        "name": "Retrieved from Cache",
+        "risk": "Informational",
+        "risk_score": 1,
+        "id": "6",
+        "alertRef": "10050-2"
+      },
+      {
+        "sourceid": "3",
+        "method": "GET",
+        "evidence": "X-Powered-By: Express",
+        "pluginId": "10037",
+        "cweid": "200",
+        "confidence": "Medium",
+        "wascid": "13",
+        "description": "The web/application server is leaking information via one or more \"X-Powered-By\" HTTP response headers. Access to such information may facilitate attackers identifying other frameworks/components your web application is reliant upon and the vulnerabilities such components may be subject to.",
+        "messageId": "6",
+        "inputVector": "",
+        "url": "https://onlineshop-psi-seven.vercel.app/api/cart/fetchcart",
+        "tags": {
+          "OWASP_2021_A01": "https://owasp.org/Top10/A01_2021-Broken_Access_Control/",
+          "WSTG-v42-INFO-08": "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework",
+          "OWASP_2017_A03": "https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure.html",
+          "CWE-200": "https://cwe.mitre.org/data/definitions/200.html"
+        },
+        "reference": "https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework\nhttps://www.troyhunt.com/2012/02/shhh-dont-let-your-response-headers.html",
+        "solution": "Ensure that your web server, application server, load balancer, etc. is configured to suppress \"X-Powered-By\" headers.",
+        "alert": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+        "param": "",
+        "attack": "",
+        "name": "Server Leaks Information via \"X-Powered-By\" HTTP Response Header Field(s)",
+        "risk": "Low",
+        "risk_score": 2,
+        "id": "11",
+        "alertRef": "10037"
+      }
+    ]
+  }
+}

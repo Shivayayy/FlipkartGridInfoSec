@@ -1,0 +1,606 @@
+
+
+Security Report
+
+=====================================
+
+Rules: 
+https://docs.bearer.com/reference/rules [v0.46.0]
+
+Language    Default Rules  Custom Rules  Files  
+JavaScript  87             0             21     
+
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 29753340a0888ca17b206529fabcc354_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/deleteUser.js:8
+
+ 8     const findUser = await User.findById(userId)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 29753340a0888ca17b206529fabcc354_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/deleteUser.js:11
+
+ 11             const deleteUser = await User.findByIdAndDelete(userId);
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 29753340a0888ca17b206529fabcc354_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/deleteUser.js:12
+
+ 12             const deleteCart = await Cart.deleteMany({ user: userId });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 29753340a0888ca17b206529fabcc354_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/deleteUser.js:13
+
+ 13             const deleteWishlist = await Wishlist.deleteMany({ user: userId });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 29753340a0888ca17b206529fabcc354_4
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/deleteUser.js:14
+
+ 14             const deleteReview = await Review.deleteMany({ user: userId });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:10
+
+ 10   const findUser = await User.findOne({ email: email })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:313
+
+ 313       const findUser = await User.findById(id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:317
+
+ 317         const isUser = await User.findById(id);
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:321
+
+ 321         const isSuccess = await User.findByIdAndUpdate(isUser._id, {
+ 322           $set: {
+ 323             password: hashedPass
+ 324           }
+ 325         })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_4
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:599
+
+ 599   const findUser = await User.findById(id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add a8319c7265efc03c30302f1eefe8666c_5
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:610
+
+ 610         const isSuccess = await User.findByIdAndUpdate(findUser, {
+ 611           $set: {
+ 612             password: hashedPass
+ 613           }
+ 614         })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add b2e1590b150d464677119b552d7da399_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:326
+
+ 326       await Payment.create({
+ 327         razorpay_order_id,
+ 328         razorpay_payment_id,
+             ...omitted (buffer value 3)
+ 332         userData,
+ 333         totalAmount
+ 334       });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add b2e1590b150d464677119b552d7da399_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:335
+
+ 335       const deleteCart = await Cart.deleteMany({ user: userInfo })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7bf430d49cea0dc91f2f16b0e5306208_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/middleware/authAdmin.js:15
+
+ 15         const checkAdmin = await User.findById(req.user.id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:35
+
+ 35         let user = await User.findOne({ $or: [{ email: email }, { phoneNumber: phoneNumber }] });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:45
+
+ 45         user = await User.create({
+ 46             firstName,
+ 47             lastName,
+                ...omitted (buffer value 3)
+ 50             password: secPass,
+ 51             isAdmin
+ 52         })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:82
+
+ 82         let user = await User.findOne({ email });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:112
+
+ 112         const user = await User.findById(req.user.id).select("-password")
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_4
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:130
+
+ 130         const user = await User.findById(req.user.id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 7f7bd65e053c651e1e857f72b99846fc_5
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:132
+
+ 132             let updateDetails = await User.findByIdAndUpdate(req.user.id, { $set: convertData })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 23f3885967f241fa87e5fc4bcbe2c2b6_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/cart.js:9
+
+ 9         const cart = await Cart.find({ user: req.user.id })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 23f3885967f241fa87e5fc4bcbe2c2b6_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/cart.js:23
+
+ 23         const findProduct = await Cart.findOne({ $and: [{ productId: _id }, { user: req.user.id }] })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 23f3885967f241fa87e5fc4bcbe2c2b6_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/cart.js:29
+
+ 29             const cart = new Cart({
+ 30                 user: req.user.id,
+ 31                 productId: _id,
+ 32                 quantity,
+ 33             });
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 23f3885967f241fa87e5fc4bcbe2c2b6_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/cart.js:46
+
+ 46         const result = await Cart.findByIdAndDelete(id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:20
+
+ 20         const product = await Product.findById(req.params.id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:31
+
+ 31         const product = await Product.find({ type: userType })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:42
+
+ 42             const product = await Product.find({ type: userType })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:46
+
+ 46             const product = await Product.find({ type: userType }).sort({ price: 1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_4
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:50
+
+ 50             const product = await Product.find({ type: userType }).sort({ price: -1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_5
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:54
+
+ 54             const product = await Product.find({ type: userType }).sort({ rating: -1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_6
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:58
+
+ 58             const product = await Product.find({ type: userType }).sort({ rating: 1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 5ac17d3399ef499bafab88d858675b3b_7
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:62
+
+ 62             const product = await Product.find({ type: userType, category: userCategory })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:10
+
+ 10             const reviewData = await Review.find({ productId: req.params.id }).populate("user", "firstName lastName")
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:14
+
+ 14             const reviewData = await Review.find({ productId: req.params.id }).populate("user", "firstName lastName").sort({ createdAt: -1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:18
+
+ 18             const reviewData = await Review.find({ productId: req.params.id }).populate("user", "firstName lastName").sort({ createdAt: 1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:22
+
+ 22             const reviewData = await Review.find({ productId: req.params.id, }).populate("user", "firstName lastName").sort({ rating: -1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_4
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:26
+
+ 26             const reviewData = await Review.find({ productId: req.params.id }).populate("user", "firstName lastName").sort({ rating: 1 })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_5
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:30
+
+ 30             const reviewData = await Review.find({ productId: req.params.id }).populate("user", "firstName lastName")
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_6
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:44
+
+ 44         const findReview = await Review.findOne({ $and: [{ user: req.user.id }, { productId: id }] })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_7
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:49
+
+ 49             const reviewData = new Review({ user: req.user.id, productId: id, comment: comment, rating: rating })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_8
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:64
+
+ 64         let deleteReview = await Review.deleteOne({ $and: [{ user: req.user.id }, { _id: id }] })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_9
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:77
+
+ 77     const review = await Review.findById(id)
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 16d6a7764304bea1cc89d40baa4bae65_10
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/review.js:80
+
+ 80             let updateDetails = await Review.findByIdAndUpdate(id, { $set: { rating: rating, comment: comment } })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 1ff86927fae98efb148c8c6317d1d70b_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/wishlist.js:9
+
+ 9         const wishlistData = await Wishlist.find({ user: req.user.id }).populate("productId")
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 1ff86927fae98efb148c8c6317d1d70b_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/wishlist.js:21
+
+ 21         const findProduct = await Wishlist.findOne({ $and: [{ productId: _id }, { user: req.user.id }] })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 1ff86927fae98efb148c8c6317d1d70b_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/wishlist.js:26
+
+ 26             const wishlistData = new Wishlist({ user: req.user.id, productId: _id })
+
+CRITICAL: Unsanitized input in NoSQL query [CWE-943]
+https://docs.bearer.com/reference/rules/javascript_express_nosql_injection
+To ignore this finding, run: bearer ignore add 1ff86927fae98efb148c8c6317d1d70b_3
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/wishlist.js:38
+
+ 38         const result = await Wishlist.findByIdAndDelete(id)
+
+HIGH: Unsanitized user input in HTTP response (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_express_cross_site_scripting
+To ignore this finding, run: bearer ignore add 4b2dba3e24d15e2513c31a5214ea3e46_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/cart.js:47
+
+ 47         res.send(result);
+
+HIGH: Unsanitized user input in HTTP response (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_express_cross_site_scripting
+To ignore this finding, run: bearer ignore add 7b34035953123d8734b1777eeb70365e_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/product.js:22
+
+ 22         res.send(product)
+
+HIGH: Unsanitized user input in HTTP response (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_express_cross_site_scripting
+To ignore this finding, run: bearer ignore add e8b68e1e1ac7f456fa904ee7d490871f_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/wishlist.js:39
+
+ 39         res.send(result)
+
+HIGH: Unsanitized user input in raw HTML strings (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_lang_raw_html_using_user_input
+To ignore this finding, run: bearer ignore add c3d61f3c52a9d536dd3dd70edfd05034_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:31
+
+ 31         html: ` <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 32         <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ 33         <head>
+            ...omitted (buffer value 3)
+ 277         
+ 278         </html>
+ 279         `,
+
+HIGH: Unsanitized user input in raw HTML strings (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_lang_raw_html_using_user_input
+To ignore this finding, run: bearer ignore add c3d61f3c52a9d536dd3dd70edfd05034_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:341
+
+ 341             html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 342 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ 343 <head>
+     ...omitted (buffer value 3)
+ 566 </body>
+ 567 
+ 568             </html>`,
+
+HIGH: Unsanitized user input in raw HTML strings (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_lang_raw_html_using_user_input
+To ignore this finding, run: bearer ignore add c3d61f3c52a9d536dd3dd70edfd05034_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/forgotPasswordController.js:630
+
+ 630             html: `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 631 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ 632 <head>
+     ...omitted (buffer value 3)
+ 877 </body>
+ 878 
+ 879             </html>`,
+
+HIGH: Unsanitized user input in raw HTML strings (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_lang_raw_html_using_user_input
+To ignore this finding, run: bearer ignore add 799290bba34f01d618a07a4724a51d8e_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:76
+
+ 76         html: `<!DOCTYPE html>
+ 77         <html>
+ 78           <head>
+                ...omitted (buffer value 3)
+ 192           </body >
+ 193         </html >
+ 194   `,
+
+HIGH: Unsanitized user input in raw HTML strings (XSS) [CWE-79]
+https://docs.bearer.com/reference/rules/javascript_lang_raw_html_using_user_input
+To ignore this finding, run: bearer ignore add 799290bba34f01d618a07a4724a51d8e_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:195
+
+ 195         text: `<!DOCTYPE html>
+ 196         <html>
+ 197           <head>
+                 ...omitted (buffer value 3)
+ 311           </body >
+ 312         </html >
+ 313   `
+
+MEDIUM: Missing Helmet configuration on HTTP headers [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add 292dade6046672f1af58434d638d1f32_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/index.js:22
+
+ 22 const app = express()
+
+MEDIUM: Unsanitized user input in Access-Control-Allow-Origin [CWE-346]
+https://docs.bearer.com/reference/rules/javascript_express_insecure_allow_origin
+To ignore this finding, run: bearer ignore add 2e7baad5820923def9c0bac9a968cae1_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/middleware/apiAuth.js:8
+
+ 8         res.setHeader('Access-Control-Allow-Origin', origin);
+
+MEDIUM: Unsanitized user input in redirect [CWE-601]
+https://docs.bearer.com/reference/rules/javascript_express_open_redirect
+To ignore this finding, run: bearer ignore add bb5f9f9ba4f2ef97b0cc53123b8e88a8_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:337
+
+ 337       res.redirect(`${process.env.PAYMENT_SUCCESS}=${razorpay_payment_id} `);
+
+MEDIUM: Missing server configuration to reduce server fingerprinting [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_reduce_fingerprint
+To ignore this finding, run: bearer ignore add 8a2f7ece3a18c19580d5383ea4da2614_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/index.js:22
+
+ 22 const app = express()
+
+MEDIUM: Leakage of sensitive information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger
+To ignore this finding, run: bearer ignore add 231da7a24078775729849fcf2010e502_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/routes/auth.js:115
+
+ 115         console.log(user.city);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 1be029c438c51cee51d8c15ddae7cec7_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/config.js:10
+
+ 10         console.log(db.connection.host);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 1be029c438c51cee51d8c15ddae7cec7_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/config.js:12
+
+ 12         console.log(error);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 8d85ab39d6f5f4a13a6c22d2a5532505_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:41
+
+ 41     console.log(error);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 8d85ab39d6f5f4a13a6c22d2a5532505_1
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:319
+
+ 319           console.log(error);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 8d85ab39d6f5f4a13a6c22d2a5532505_2
+
+File: /Users/shivamdwivedi/Desktop/org-backend/controller/paymentController.js:346
+
+ 346     console.log(error);
+
+LOW: Leakage of information in logger message [CWE-532]
+https://docs.bearer.com/reference/rules/javascript_lang_logger_leak
+To ignore this finding, run: bearer ignore add 419b3f1f03eaf2c2589c021b7f9176d1_0
+
+File: /Users/shivamdwivedi/Desktop/org-backend/index.js:53
+
+ 53     console.log(`E-commerce backend listening at http://localhost:${port}`)
+=====================================
+
+87 checks, 66 findings
+
+CRITICAL: 47 (CWE-943)
+HIGH: 8 (CWE-79)
+MEDIUM: 5 (CWE-346, CWE-532, CWE-601, CWE-693)
+LOW: 6 (CWE-532)
+WARNING: 0
+
+Need help or want to discuss the output? Join the Community https://discord.gg/eaHZBJUXRF
+

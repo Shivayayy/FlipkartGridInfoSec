@@ -1,0 +1,75 @@
+# Python cache files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pyo
+
+# Django-specific
+*.log
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.pot
+*.mo
+
+# Environment variables
+.env
+
+# Local settings
+local_settings.py
+
+# PyCharm and other IDEs
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# virtualenv
+.venv/
+venv/
+ENV/
+env/
+
+# Celery worker pid file
+celerybeat-schedule
+celerybeat.pid
+
+# mypy
+.mypy_cache/
+
+# pytest
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Sphinx documentation
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Django secret key
+*.key
+
+# Backup files
+*.bak
+
+# Code quality tools
+.coverage
+.coverage.*
